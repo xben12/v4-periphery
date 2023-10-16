@@ -330,7 +330,7 @@ contract TWAMM is BaseHook, ITWAMM {
         return bytes("");
     }
 
-    function _getTWAMM(PoolKey memory key) private view returns (State storage) {
+    function _getTWAMM(PoolKey memory key) internal view returns (State storage) {
         return twammStates[PoolId.wrap(keccak256(abi.encode(key)))];
     }
 
